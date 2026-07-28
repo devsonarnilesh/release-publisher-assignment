@@ -9,7 +9,7 @@ mkdir -p /logs/verifier
 
 # pytest + pytest-json-ctrf are pre-installed in the verifier image (shared mode).
 # allow_internet=false, so no wheels are resolved at run time — invoke pytest directly.
-python -m pytest --ctrf /logs/verifier/ctrf.json /tests/test_outputs.py -rA
+python3 -m pytest --ctrf /logs/verifier/ctrf.json /tests/test_outputs.py -rA
 code=$?
 
 # Surface pytest's raw exit code so the negative-control check can tell "tests ran
